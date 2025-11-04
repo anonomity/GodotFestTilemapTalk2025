@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PatternAndPos" load_steps=3 format=3 uid="uid://d0t0xeugcthx8"]
+
+[ext_resource type="Script" uid="uid://b1y2j1olpstgx" path="res://PatternAndPosition.gd" id="1_7gjks"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_7gjks"]
+
+[resource]
+script = ExtResource("1_7gjks")
+pattern = SubResource("TileMapPattern_7gjks")
