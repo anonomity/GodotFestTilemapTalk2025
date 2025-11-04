@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://mni74fkgcvmh"]
+
+[ext_resource type="Texture2D" uid="uid://cjq17s382hnfx" path="res://assets/plains.png" id="1_gpdkl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71j4b"]
+atlas = ExtResource("1_gpdkl")
+region = Rect2(48, 195, 16, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpdkl"]
+size = Vector2(16, 15)
+
+[node name="grass" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_71j4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_gpdkl")
