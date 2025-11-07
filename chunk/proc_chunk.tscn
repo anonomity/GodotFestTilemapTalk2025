@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://7s6vsxk30jjk"]
+
+[ext_resource type="Script" uid="uid://d2cpf2kcrvquk" path="res://proc_chunk.gd" id="1_5klgq"]
+
+[sub_resource type="Gradient" id="Gradient_bmhui"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.32391715, 0.6629002)
+colors = PackedColorArray(0, 0.6039216, 0, 1, 0.7316556, 0.7389313, 0.24998878, 1, 0.08154223, 0.19788636, 0.23906249, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_65w5r"]
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bg0sg"]
+noise = SubResource("FastNoiseLite_65w5r")
+color_ramp = SubResource("Gradient_bmhui")
+
+[node name="ProcChunk" type="Node2D"]
+script = ExtResource("1_5klgq")
+
+[node name="ChunkContainer" type="Node2D" parent="."]
+
+[node name="NoiseTextureRect" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("NoiseTexture2D_bg0sg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3838, 2245)
+zoom = Vector2(0.145, 0.145)
+
+[node name="thread_checker" type="Timer" parent="."]
+wait_time = 2.5
